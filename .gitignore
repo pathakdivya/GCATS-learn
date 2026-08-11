@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Local env files
+.env
+.env.local
