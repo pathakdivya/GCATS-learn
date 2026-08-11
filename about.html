@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Device</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images\logo-transp.png">
+</head>
+<body>
+    <div class="main-container">
+    <div class="container">
+        <nav class="stage-nav" aria-label="Training progress">
+            <a class="stage-pill done" href="index.html"><span class="stage-pill-num">&#10003;</span> Welcome</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill current" href="about.html"><span class="stage-pill-num">i</span> About the Device</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill upcoming" href="stage1.html"><span class="stage-pill-num">1</span> Controller Familiarisation</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill upcoming" href="stage2.html"><span class="stage-pill-num">2</span> Random Dot Motion Task</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill upcoming" href="stage3.html"><span class="stage-pill-num">3</span> Questionnaire</a>
+        </nav>
+        <header>
+            <h1>About the Device</h1>
+            <p>A quick introduction to the controller before you start.</p>
+        </header>
+
+        <main>
+            <div class="about-layout">
+
+                <div class="about-panel">
+                    <h3>What am I holding?</h3>
+                    <p class="about-copy">
+                        You're holding a gamepad which is a handheld device with two
+                        thumbsticks and several buttons. Each part sends its own signal to the computer, so
+                        that the computer can read exactly how far a stick is tilted or which buttons are pressed. You can press any button or move either stick to see the controller respond in the illustration on the right.
+                    </p>
+
+                    <h3>Components you will interact with:</h3>
+                    <ul class="about-component-list">
+                        <li><b>Thumbsticks</b> &mdash; two small analog sticks, tilted in any direction to
+                            control movements.</li>
+                        <li><b>Shoulder buttons</b> &mdash; L1/R1, sitting along the top edge under your
+                            index fingers.</li>
+                        <li><b>Triggers</b> &mdash; L2/R2, pressure-sensitive buttons just behind the
+                            shoulder buttons.</li>
+                    </ul>
+
+                    <h3>How to hold it comfortably</h3>
+                    <ul class="about-holding-list">
+                        <li>Hold the controller with <b>both hands</b>, one on each side.</li>
+                        <li>Rest your <b>thumbs</b> comfortably on the thumbsticks.</li>
+                        <li>Keep your <b>index fingers</b> resting near the shoulder buttons or triggers.</li>
+                        <li>Avoid <b>gripping too tightly</b> &mdash; a relaxed grip is easier to sustain.</li>
+                        <li>Feel free to <b>adjust your hand position</b> at any point if anything feels
+                            uncomfortable.</li>
+                    </ul>
+
+                    <div class="rdm-setup-panel" id="stick-setup-panel">
+                        <h3>Which thumbstick would you like to use?</h3>
+                        <p class="rdm-field-label">Your choice will be used throughout the familiarisation and task stages.</p>
+                        <div class="rdm-choice-row" id="stick-choice">
+                            <button type="button" class="rdm-choice-btn" data-stick="left">Left Thumbstick</button>
+                            <button type="button" class="rdm-choice-btn" data-stick="right">Right Thumbstick</button>
+                        </div>
+                        <p class="rdm-setup-hint" id="stick-setup-hint">Select a thumbstick to continue.</p>
+                    </div>
+
+                    <a href="stage1.html" class="calibration-btn about-continue-btn" id="about-continue-btn" style="text-decoration:none; display:inline-block; pointer-events:none; opacity:0.5;">Continue to Stage 1 &rarr;</a>
+                </div>
+
+                <div class="about-illustration-panel">
+                    <div class="controller-visual">
+                        <div class="controller-outline">
+                            <div class="trigger left-trigger" id="l2"></div>
+                            <div class="trigger right-trigger" id="r2"></div>
+                            <div class="shoulder left-shoulder" id="l1"></div>
+                            <div class="shoulder right-shoulder" id="r1"></div>
+                            <div class="controller-body">
+                                <div class="dpad">
+                                    <div class="dpad-btn" id="dpad-up"></div>
+                                    <div class="dpad-btn" id="dpad-down"></div>
+                                    <div class="dpad-btn" id="dpad-left"></div>
+                                    <div class="dpad-btn" id="dpad-right"></div>
+                                </div>
+                                <div class="face-buttons">
+                                    <div class="face-btn" id="triangle"></div>
+                                    <div class="face-btn" id="square"></div>
+                                    <div class="face-btn" id="circle"></div>
+                                    <div class="face-btn" id="cross"></div>
+                                </div>
+                                <div class="center-buttons">
+                                    <div class="center-btn" id="share"></div>
+                                    <div class="center-btn" id="options"></div>
+                                    <div class="center-btn" id="ps"></div>
+                                    <div class="center-btn" id="touchpad"></div>
+                                </div>
+                                <div class="controller-visual-sticks">
+                                    <div class="controller-stick-container">
+                                        <div class="controller-stick-circle" id="visual-stick-left-circle">
+                                            <div class="controller-stick-dot" id="visual-stick-left"></div>
+                                        </div>
+                                    </div>
+                                    <div class="controller-stick-container">
+                                        <div class="controller-stick-circle" id="visual-stick-right-circle">
+                                            <div class="controller-stick-dot" id="visual-stick-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="about-label about-label-stick-left">Left Thumbstick</span>
+                        <span class="about-label about-label-stick-right">Right Thumbstick</span>
+                        <span class="about-label about-label-dpad">D-Pad</span>
+                        <span class="about-label about-label-face">Face Buttons</span>
+                        <span class="about-label about-label-shoulder-l">L1 Shoulder</span>
+                        <span class="about-label about-label-shoulder-r">R1 Shoulder</span>
+                        <span class="about-label about-label-trigger-l">L2 Trigger</span>
+                        <span class="about-label about-label-trigger-r">R2 Trigger</span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    </div>
+
+    <script type="module" src="about.js"></script>
+</body>
+</html>

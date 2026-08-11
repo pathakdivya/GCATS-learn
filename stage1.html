@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controller Familiarisation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images\logo-transp.png">
+</head>
+<body>
+    <div class="main-container">
+    <div class="container">
+        <nav class="stage-nav" aria-label="Training progress">
+            <a class="stage-pill done" href="index.html"><span class="stage-pill-num">&#10003;</span> Welcome</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill done" href="about.html"><span class="stage-pill-num">&#10003;</span> About the Device</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill current" href="stage1.html"><span class="stage-pill-num">1</span> Controller Familiarisation</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill upcoming" href="stage2.html"><span class="stage-pill-num">2</span> Random Dot Motion Task</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill upcoming" href="stage3.html"><span class="stage-pill-num">3</span> Questionnaire</a>
+        </nav>
+        <header>
+            <h1>Stage 1: Controller Familiarisation</h1>
+            <p>Work through each action below using your chosen thumbstick and the relevant buttons. Each item checks itself off automatically.</p>
+        </header>
+
+        <main>
+            <div id="no-stick-notice" class="welcome-note rdm-hidden">
+                No thumbstick preference was found. Please go back to <a href="about.html">About the Device</a> and choose one first.
+            </div>
+
+            <div class="controller-layout" id="checklist-layout">
+
+                <div class="info-panel">
+                    <div class="checklist-panel">
+                        <h3>Checklist</h3>
+                        <ol class="checklist-list" id="checklist-list"></ol>
+                    </div>
+                </div>
+
+                <div class="visual-panel">
+                    <div class="controller-visual">
+                        <div class="controller-outline">
+                            <div class="trigger left-trigger" id="l2"></div>
+                            <div class="trigger right-trigger" id="r2"></div>
+                            <div class="shoulder left-shoulder" id="l1"></div>
+                            <div class="shoulder right-shoulder" id="r1"></div>
+                            <div class="controller-body">
+                                <div class="dpad">
+                                    <div class="dpad-btn" id="dpad-up"></div>
+                                    <div class="dpad-btn" id="dpad-down"></div>
+                                    <div class="dpad-btn" id="dpad-left"></div>
+                                    <div class="dpad-btn" id="dpad-right"></div>
+                                </div>
+                                <div class="face-buttons">
+                                    <div class="face-btn" id="triangle"></div>
+                                    <div class="face-btn" id="square"></div>
+                                    <div class="face-btn" id="circle"></div>
+                                    <div class="face-btn" id="cross"></div>
+                                </div>
+                                <div class="controller-visual-sticks">
+                                    <div class="controller-stick-container">
+                                        <div class="controller-stick-circle" id="visual-stick-left-circle">
+                                            <div class="controller-stick-dot" id="visual-stick-left"></div>
+                                        </div>
+                                    </div>
+                                    <div class="controller-stick-container">
+                                        <div class="controller-stick-circle" id="visual-stick-right-circle">
+                                            <div class="controller-stick-dot" id="visual-stick-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-current-card" id="checklist-current-card">
+                        <p class="checklist-current-label">Current step</p>
+                        <p class="checklist-current-text" id="checklist-current-text">Loading&hellip;</p>
+
+                        <div class="checklist-stick-wrap" id="checklist-stick-wrap">
+                            <div class="stick-circle" id="checklist-stick">
+                                <div class="stick-line"></div>
+                                <div class="stick-dot"></div>
+                                <div class="checklist-target" id="checklist-target"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rdm-complete rdm-hidden" id="checklist-complete-screen">
+                        <h2>Familiarisation Complete</h2>
+                        <p>You've completed every action. You're ready to move on to the task.</p>
+                        <a href="stage2.html" class="calibration-btn" style="text-decoration:none; display:inline-block;">Continue to Stage 2 &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    </div>
+
+    <script type="module" src="stage1.js"></script>
+</body>
+</html>

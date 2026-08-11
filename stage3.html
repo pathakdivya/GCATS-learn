@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Comfort &amp; Familiarity Questionnaire</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images\logo-transp.png">
+</head>
+<body>
+    <div class="main-container">
+    <div class="container">
+        <nav class="stage-nav" aria-label="Training progress">
+            <a class="stage-pill done" href="index.html"><span class="stage-pill-num">&#10003;</span> Welcome</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill done" href="about.html"><span class="stage-pill-num">&#10003;</span> About the Device</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill done" href="stage1.html"><span class="stage-pill-num">&#10003;</span> Controller Familiarisation</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill done" href="stage2.html"><span class="stage-pill-num">&#10003;</span> Random Dot Motion Task</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill current" href="stage3.html"><span class="stage-pill-num">3</span> Questionnaire</a>
+        </nav>
+        <header>
+            <h1>Hardware Comfort &amp; Familiarity Questionnaire</h1>
+            <p>Almost done. This last page asks about your prior experience and how comfortable the controller felt.</p>
+        </header>
+
+        <main>
+            <div id="no-session-notice" class="welcome-note rdm-hidden">
+                We couldn't find a passing Stage 2 attempt. Please complete <a href="stage2.html">Stage 2</a> with an accuracy score of at least 75% before filling out this questionnaire.
+            </div>
+
+            <div id="survey-wrap">
+
+                <div class="survey-summary" id="survey-summary">
+                    <span class="survey-summary-item"><b>Thumbstick used:</b> <span id="summary-stick">&mdash;</span></span>
+                    <span class="survey-summary-item"><b>Best accuracy:</b> <span id="summary-accuracy">&mdash;</span></span>
+                    <span class="survey-summary-item"><b>Attempts made:</b> <span id="summary-attempts">&mdash;</span></span>
+                </div>
+
+                <form id="survey-form">
+                    <div class="rdm-setup-panel">
+                        <h3>Participant ID</h3>
+                        <label class="rdm-field-label" for="participant-id">Participant ID <span class="rdm-optional">(optional)</span></label>
+                        <input type="text" id="participant-id" class="rdm-text-input" placeholder="e.g. P01" autocomplete="off">
+                    </div>
+
+                    <section class="survey-section">
+                        <h3>Hardware Comfort</h3>
+                        <p class="survey-section-intro">Rate how much you agree with each statement about the controller hardware.</p>
+                        <div id="comfort-items"></div>
+                    </section>
+
+                    <section class="survey-section">
+                        <h3>Prior Familiarity</h3>
+
+                        <div class="survey-field">
+                            <p class="survey-question">Have you used a game controller before?</p>
+                            <div class="rdm-choice-row two-col" data-field="hasUsedControllerBefore">
+                                <button type="button" class="rdm-choice-btn" data-value="yes">Yes</button>
+                                <button type="button" class="rdm-choice-btn" data-value="no">No</button>
+                            </div>
+                        </div>
+
+                        <div class="survey-field">
+                            <p class="survey-question">How often do you use a game controller?</p>
+                            <div class="rdm-choice-row five-col" data-field="usageFrequency">
+                                <button type="button" class="rdm-choice-btn" data-value="Never">Never</button>
+                                <button type="button" class="rdm-choice-btn" data-value="Rarely">Rarely</button>
+                                <button type="button" class="rdm-choice-btn" data-value="Sometimes">Sometimes</button>
+                                <button type="button" class="rdm-choice-btn" data-value="Often">Often</button>
+                                <button type="button" class="rdm-choice-btn" data-value="Daily">Daily</button>
+                            </div>
+                        </div>
+
+                        <div class="survey-field">
+                            <p class="survey-question">What types of controllers have you previously used? <span class="rdm-optional">(select all that apply)</span></p>
+                            <div class="rdm-choice-row four-col" data-field="controllerTypes" data-multi="true">
+                                <button type="button" class="rdm-choice-btn" data-value="Xbox">Xbox</button>
+                                <button type="button" class="rdm-choice-btn" data-value="PlayStation">PlayStation</button>
+                                <button type="button" class="rdm-choice-btn" data-value="Nintendo">Nintendo</button>
+                                <button type="button" class="rdm-choice-btn" data-value="PC / Generic">PC / Generic</button>
+                            </div>
+                        </div>
+
+                        <div class="survey-field">
+                            <p class="survey-question">Which thumbstick did you use during this task?</p>
+                            <p class="survey-readonly-answer" id="stick-readonly-answer">&mdash;</p>
+                        </div>
+
+                        <div class="survey-field">
+                            <p class="survey-question">Did you experience any pain, strain, fatigue, or discomfort?</p>
+                            <div class="rdm-choice-row two-col" data-field="experiencedDiscomfort">
+                                <button type="button" class="rdm-choice-btn" data-value="yes">Yes</button>
+                                <button type="button" class="rdm-choice-btn" data-value="no">No</button>
+                            </div>
+                            <textarea class="survey-textarea rdm-hidden" id="discomfort-details" placeholder="Please describe briefly&hellip;"></textarea>
+                        </div>
+
+                        <div class="survey-field">
+                            <p class="survey-question">Was any particular button, trigger, or thumbstick difficult to use? <span class="rdm-optional">(optional)</span></p>
+                            <textarea class="survey-textarea" id="difficult-input" placeholder="Optional&hellip;"></textarea>
+                        </div>
+
+                        <div class="survey-field">
+                            <p class="survey-question">Is there anything that would have made the controller easier or more comfortable to use? <span class="rdm-optional">(optional)</span></p>
+                            <textarea class="survey-textarea" id="improvement-suggestions" placeholder="Optional&hellip;"></textarea>
+                        </div>
+                    </section>
+
+                    <button type="button" class="calibration-btn" id="review-btn">Review My Responses</button>
+                </form>
+
+                <div class="survey-review rdm-hidden" id="survey-review">
+                    <h3>Review Your Responses</h3>
+                    <div id="review-content"></div>
+                    <div class="survey-review-actions">
+                        <button type="button" class="calibration-btn-secondary" id="edit-btn">Edit Responses</button>
+                        <button type="button" class="calibration-btn" id="submit-btn">Submit and Save Data</button>
+                    </div>
+                </div>
+
+                <div class="rdm-hidden" id="save-confirmation">
+                    <p class="rdm-saved-msg">&#10003; Your data has been saved and downloaded.</p>
+                    <a href="index.html" class="calibration-btn" style="text-decoration:none; display:inline-block;">Return to Welcome Page &rarr;</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    </div>
+
+    <script type="module" src="stage3.js"></script>
+</body>
+</html>

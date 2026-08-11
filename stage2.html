@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dot Motion Task</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images\logo-transp.png">
+</head>
+<body>
+    <div class="main-container">
+    <div class="container">
+        <nav class="stage-nav" aria-label="Training progress">
+            <a class="stage-pill done" href="index.html"><span class="stage-pill-num">&#10003;</span> Welcome</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill done" href="about.html"><span class="stage-pill-num">&#10003;</span> About the Device</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill done" href="stage1.html"><span class="stage-pill-num">&#10003;</span> Controller Familiarisation</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill current" href="stage2.html"><span class="stage-pill-num">2</span> Random Dot Motion Task</a>
+            <span class="stage-nav-arrow">&rarr;</span>
+            <a class="stage-pill upcoming" href="stage3.html"><span class="stage-pill-num">3</span> Questionnaire</a>
+        </nav>
+        <header>
+            <h1>Stage 2: Random Dot Motion Task</h1>
+            <p>Watch the moving dots and tilt your thumbstick toward the direction most of them are drifting. The task adapts to your performance as you go.</p>
+        </header>
+
+        <main>
+            <div id="no-stick-notice" class="welcome-note rdm-hidden">
+                No thumbstick preference was found. Please go back to <a href="about.html">About the Device</a> and choose one first.
+            </div>
+
+            <div class="controller-layout" id="rdm-task-layout">
+
+                <div class="info-panel">
+                    <div class="rdm-panel">
+                        <div class="controller-info">
+                            <h3>Calibration Status</h3>
+                            <div class="calibration-status" id="rdm-status-text">
+                                Connect a gamepad and press <b>Begin</b> to start the task.
+                            </div>
+                        </div>
+
+                        <div class="rdm-status-row">
+                            <div class="rdm-status-card">
+                                <span class="rdm-status-label">Block</span>
+                                <span class="rdm-status-value" id="rdm-block-value">&mdash; / 2</span>
+                            </div>
+                            <div class="rdm-status-card">
+                                <span class="rdm-status-label">Trial</span>
+                                <span class="rdm-status-value" id="rdm-trial-value">&mdash; / 40</span>
+                            </div>
+                            <div class="rdm-status-card">
+                                <span class="rdm-status-label">Coherence</span>
+                                <span class="rdm-status-value" id="rdm-coherence-value">&mdash;</span>
+                            </div>
+                        </div>
+
+                        <div class="calibration-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="rdm-progress-fill"></div>
+                            </div>
+                        </div>
+
+                        <button class="calibration-btn" id="rdm-start-btn">Begin Task</button>
+
+                        <div class="rdm-instructions" id="rdm-instructions">
+                            <b>How to respond:</b> a field of dots appears; some move together in one
+                            direction (up, down, left, or right) while the rest drift randomly. As soon as
+                            you can tell the direction, tilt your stick that way. After you respond,
+                            re-center the stick to neutral before the next trial starts. If no gamepad is
+                            detected you can use the <b>arrow keys</b> instead.
+                        </div>
+
+                        <p class="rdm-attempt-note" id="rdm-attempt-note"></p>
+                    </div>
+                </div>
+
+                <div class="visual-panel">
+                    <div class="rdm-stage-wrap" id="rdm-stage-wrap">
+                        <canvas id="rdm-canvas" width="480" height="480"></canvas>
+                        <span class="rdm-arrow up" id="rdm-arrow-up">&#8593;</span>
+                        <span class="rdm-arrow down" id="rdm-arrow-down">&#8595;</span>
+                        <span class="rdm-arrow left" id="rdm-arrow-left">&#8592;</span>
+                        <span class="rdm-arrow right" id="rdm-arrow-right">&#8594;</span>
+                        <div class="rdm-feedback-badge" id="rdm-feedback-badge"></div>
+                    </div>
+
+                    <div class="rdm-mini-stick">
+                        <div class="stick-container">
+                            <div class="stick-circle" id="rdm-active-stick">
+                                <div class="stick-line"></div>
+                                <div class="stick-dot"></div>
+                            </div>
+                            <div class="stick-info" id="rdm-active-stick-label">Stick</div>
+                        </div>
+                    </div>
+
+                    <div class="rdm-complete rdm-hidden" id="rdm-complete-screen">
+                        <h2 id="rdm-result-heading">Task Complete</h2>
+                        <p id="rdm-result-message">Nice work!</p>
+                        <div class="rdm-complete-stats">
+                            <div class="rdm-complete-stat">
+                                <span class="rdm-complete-stat-label">Accuracy Score</span>
+                                <span class="rdm-complete-stat-value" id="rdm-final-accuracy">&mdash;</span>
+                            </div>
+                            <div class="rdm-complete-stat">
+                                <span class="rdm-complete-stat-label">Coherence Score</span>
+                                <span class="rdm-complete-stat-value final-coherence" id="rdm-final-coherence">&mdash;</span>
+                            </div>
+                        </div>
+
+                        <div class="rdm-result-actions">
+                            <button class="calibration-btn-secondary" id="rdm-redo-btn">Repeat Stage 2</button>
+                            <button class="calibration-btn" id="rdm-continue-btn" disabled>Continue to Questionnaire &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    </div>
+
+    <script type="module" src="stage2.js"></script>
+</body>
+</html>
