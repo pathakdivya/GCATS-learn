@@ -16,7 +16,7 @@ Continuous affective tracking tasks ask participants to make fine, sustained thu
 - **About the Device** – introduces the controller's layout and how to hold it, and lets the participant choose their preferred thumbstick (left or right)
 - **Stage 1: Controller Familiarisation** – a guided checklist with live visual feedback (an on-screen stick and button diagram) that confirms the participant can find and use each control
 - **Stage 2: Random Dot Motion Task** – a classic RDM discrimination task where the participant reports the net direction of a field of moving dots using the thumbstick; coherence adapts to performance via a staircase procedure, with a pass threshold before continuing
-- **Stage 3: Hardware Comfort & Familiarity Questionnaire** – a short survey (prior controller experience, usage frequency, comfort ratings, free-text feedback) with automatic reverse-scoring on negatively worded items
+- **Stage 3: Questionnaire for Hardware Comfort & Familiarity** – a short survey (prior controller experience, usage frequency, comfort ratings, free-text feedback) with automatic reverse-scoring on negatively worded items
 - **Session export** – combines Stage 1 progress, every Stage 2 attempt (trial-by-trial), and questionnaire responses into a single tidy CSV per participant
 - **No build step** – vanilla TypeScript compiled to plain JS, no bundler or framework dependency
 - **Keyboard fallback** – stages remain usable without a gamepad connected, for testing and accessibility
