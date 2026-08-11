@@ -2,7 +2,7 @@
 
 # Gamepad Training Protocol
 
-A lightweight researcher friendly web app for familiarising behavioural research participants with a gamepad controller before they begin a main experiment. Built for use alongside [GCATS](https://github.com/pathakdivya/GCATS) (Gamepad-based Continuous Affective Tracking System), it can also be independently used for training. Software was built at [NSLab](https://sites.google.com/site/ammuns68), [Department of Cognitive Science](https://www.cgs.iitk.ac.in/user/cgs/cgs/), IIT Kanpur.
+A lightweight researcher friendly web app for familiarising behavioural research participants with a gamepad controller before they begin a main experiment. Built for use alongside [GCATS](https://github.com/pathakdivya/GCATS) (Gamepad-based Continuous Affective Tracing System), it can also be independently used for training. Software was built at [NSLab](https://sites.google.com/site/ammuns68), [Department of Cognitive Science](https://www.cgs.iitk.ac.in/user/cgs/cgs/), IIT Kanpur.
 
 Participants plug in a controller, walk through a guided orientation, complete an adaptive motion-discrimination task to confirm they can use the thumbstick accurately, and fill out a short comfort questionnaire — all in the browser, with results exportable as CSV.
 
