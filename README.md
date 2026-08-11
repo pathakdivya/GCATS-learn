@@ -76,7 +76,7 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Acknowledgements
 
-Built as part of ongoing research infrastructure work at NSLab, IIT Kanpur, in collaboration with McGill University. The controller diagram and connection-detection approach draw on lessons learned adapting [controllercheck.org](https://controllercheck.org).
+Built as part of ongoing research work at NSLab, CGS, IIT Kanpur. The controller diagram and connection-detection approach draw on lessons learned adapting [controllercheck.org](https://controllercheck.org).
 
 ---
 
